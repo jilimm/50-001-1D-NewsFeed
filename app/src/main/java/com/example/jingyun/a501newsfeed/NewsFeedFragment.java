@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 
 /**
@@ -18,7 +19,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 
-/*
+
 public class NewsFeedFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +29,7 @@ public class NewsFeedFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ListView newsListView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -45,7 +47,7 @@ public class NewsFeedFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
 
-/*
+
     public static NewsFeedFragment newInstance(String param1, String param2) {
         NewsFeedFragment fragment = new NewsFeedFragment();
         Bundle args = new Bundle();
@@ -68,6 +70,10 @@ public class NewsFeedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.fragment_news_feed,container,false);
+
+        newsListView = (ListView) rootView.findViewById(R.id.)
+
         return inflater.inflate(R.layout.fragment_news_feed, container, false);
     }
 
@@ -106,10 +112,9 @@ public class NewsFeedFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
 
-/*
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }
-*/

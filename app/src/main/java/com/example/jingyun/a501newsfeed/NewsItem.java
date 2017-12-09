@@ -11,7 +11,6 @@ public class NewsItem {
     private String newsTitle;
     private String imageURL;
     private String newsLink;
-    //private Bitmap imageBitmap;
 
     public String getNewsTitle(){
         return newsTitle;
@@ -41,9 +40,5 @@ public class NewsItem {
         this.imageURL = imagelink;
         this.newsLink = articleLink;
     }
-    /*
-    public Bitmap getImageBitmap(){
-        return imageBitmap;
-    }
-    */
+
 }

@@ -47,7 +47,7 @@ public class NewsFeed extends AppCompatActivity {
         newsListView.setAdapter(newsAdapter);
         //newsTitles = (TextView) findViewById(R.id.testnews);
         */
-        
+
 
         new NewsFeed.AsyncHttpTask().execute();
     }
