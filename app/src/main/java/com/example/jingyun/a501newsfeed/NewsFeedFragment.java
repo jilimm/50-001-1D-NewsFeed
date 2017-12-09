@@ -1,13 +1,31 @@
 package com.example.jingyun.a501newsfeed;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -29,9 +47,14 @@ public class NewsFeedFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private ListView newsListView;
-
+    private ListView newsItemListView;
+    List<NewsItem> newsItemList;
+    public static NewsAdapter newsItemadapter;
+    private static Parcelable state;
     private OnFragmentInteractionListener mListener;
+    private final String reqURL="https://newsapi.org/v2/everything?q=sustainable%20business%20practices&sortBy=popularity&apiKey=1e128baae3034bd899a7a791748e8e47";
+
+
 
     public NewsFeedFragment() {
         // Required empty public constructor
@@ -71,10 +94,19 @@ public class NewsFeedFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_news_feed,container,false);
+        newsItemadapter = new NewsAdapter(getActivity(), newsItemList);
+        newsItemListView = (ListView) rootView.findViewById(R.id.newsList);
+        newsItemListView.setAdapter(newsItemadapter);
+        newsItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Uri webpage = Uri.parse(newsItemList.get(position).getImageURL());
+                Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+            }
+        });
 
-        newsListView = (ListView) rootView.findViewById(R.id.)
 
-        return inflater.inflate(R.layout.fragment_news_feed, container, false);
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -117,4 +149,76 @@ public class NewsFeedFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+    public class AsyncHttpTask extends AsyncTask<Void, Void, Void> {
+        List<NewsItem> articleList = new ArrayList<NewsItem>();
+
+
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            URL url;
+            HttpURLConnection urlConnection = null;
+
+            try{
+                url = new URL(reqURL);
+                urlConnection = (HttpURLConnection)url.openConnection();
+                String response = streamtoString(urlConnection.getInputStream());
+                articleList = parseResult(response);
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            for (int i=0; i<articleList.size(); i++){
+                articleTitle.setText(articleList.get(i).getNewsTitle());
+                Picasso.with(NewsFeed.this)
+                        .load(articleList.get(i).getImageURL())
+                        .into(newsImg);
+            }
+        }
+    }
+
+    private String streamtoString(InputStream stream) {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
+        String data;
+        String result = "";
+        try {
+            while ((data = bufferedReader.readLine()) != null) {
+                result += data;
+            }
+            if (null != stream){
+                stream.close();
+            }
+        } catch (Exception e){
+            e.printStackTrace();;
+        }
+        return result;
+    }
+
+    private List<NewsItem> parseResult(String result){
+        JSONObject response = null;
+        List<NewsItem> newsItemList = new ArrayList<NewsItem>();
+        String totalRes="";
+        try {
+            response = new JSONObject(result);
+            JSONArray articles = response.optJSONArray("articles");
+            //test for first jSON object
+            for (int i=0; i<articles.length();i++){
+                JSONObject article = articles.optJSONObject(i);
+                String title = article.optString("title");
+                String imageURL = article.optString("urlToImage");
+                String articleLink = article.optString("url");
+                //to check if I am getting any news titles
+                newsItemList.add(new NewsItem(title, imageURL,articleLink));
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return newsItemList;
+    }
+
 }
