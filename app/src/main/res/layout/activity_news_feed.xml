@@ -4,14 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.jingyun.a501newsfeed.NewsFeed">
 
+    <!-- TODO: Update blank fragment layout
+    <ListView
+        android:id="@+id/newsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+         -->
+
+    <ImageView
+        android:id="@+id/newsItemImg"
+        android:layout_width="match_parent"
+        android:layout_height="173dp" />
 
     <TextView
-        android:id="@+id/testnews"
-        android:text="news"
+        android:id="@+id/newsTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="273dp"
-        tools:layout_editor_absoluteY="176dp" />
+        android:textSize="30sp"
+        android:text="newsTitle" />
+
 </LinearLayout>

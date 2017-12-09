@@ -2,166 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\05ad133321128f6d4784db1324f4f51c4644add6\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Jing Yun\.android\build-cache\e31616962be111aa51b7613d6e55fb3c9a5e4f22\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_272761aaaa5e710b951c04087c58b3718f438177\classes.dex" />
+        sha1="b4d6fbbb48b42dd03fd9c5a09b3b7a53266df6ed">
+        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\50-001-1D-NewsFeed\app\build\intermediates\pre-dexed\debug\classes_aba87eb3113f68a8a809848961ddb2f9ef56a725.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.0\e414a4cb28434e25c4f6aa71426eb20cf4874ae9\common-1.0.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Jing Yun\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.3.3\1262995965440e28ba5c4d480c9c9ab4ccce84cc\picasso-2.3.3.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\common-1.0.0_3566c0dd2810faf82716ca726f4f850d733d182b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\6296cb7d2859c0f372e00b24d3d8cd74e7164ffd\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e731f61023e4920819f3885c57f9e4f8c6b368b1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\9e2b13db8e6166abe8c93c25adc02f9c94109778\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_79194768eb4b0d4fd53e070d6fe159589b0a4d34\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_9e21e3381bf7cc1b01dfc569951935d5e16361af\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support-annotations-26.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-26.1.0_ce833c0c946fe5d5ea3842bad80c55b2440be5d2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\8a7af2c38aa2d1256e741c538a4d66df67baf056\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="508f50705b4fde51a16259f29c854201a3044516">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_86e34cbbe813d6342fee9f10399c3cfe184f80ad\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\common-1.0.0_bf23de876330b9486e6a375cd23db1e4a20844b3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\04aaf80b428b71fb0688cab7f69a420a08099fa7\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_33f503fa5c1e0f1cde2245e294fff61850232a2e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\d5bdd54af8f4176a583fa303035a93b2eac52b89\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6865b42ccb90ca2db1734d4e58b71d1e30c2a52e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\2597e8ae89323ac6fbffc1f2380123931c5fe552\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e035c99c622cd77ed55014f8703f6158af65cd5c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\d32e3eb9f7632d8fd1366c0be6eeebabfdd7acf7\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bac68868c287d9e944d4930ccdd887704c3202fc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\2266a8330b7c75ea8c5658a8ff9aea27ee09b4a9\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8fa9cd0ea866c729f2687c84dc8bc0d34d1c4a43\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\4b37848d3f6a503f237d33aec5837addfe548d41\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8e7aba948f3c387a62c23069dc3490dcb975da72\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\c69af93ba7d6a7f683eeccc6af494c306a2e3946\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cbb137846d586943ed64a21689cd8c2ef88b9b45\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="c9f32d809baa2f97620ec05b4b856224b8dd934e">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9afe2d31aedfd9489a8d88a751059df21f7ba925\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\0a1987c45a429dcd5030c2ef44d84cb89ae0dd7c\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ba280f76bf317ec30c6420016b35ab65ad260435\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Jing Yun\.android\build-cache\314e4bfef1cc70f4d91ff46c1208f6239da654d7\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\501NewsFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_55e580f636fbaa6a2cfaed644bd7e71caee42562\classes.dex" />
+        sha1="1262995965440e28ba5c4d480c9c9ab4ccce84cc">
+        <dex dex="C:\Users\Jing Yun\Desktop\50.001 Intro to Info Sys\1D\50-001-1D-NewsFeed\app\build\intermediates\pre-dexed\debug\picasso-2.3.3_7e76203ec7cb93be5b029b19ebc81568c8262aa9.jar" />
     </item>
 
 </items>
