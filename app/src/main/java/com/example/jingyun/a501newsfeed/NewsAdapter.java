@@ -1,6 +1,7 @@
 package com.example.jingyun.a501newsfeed;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,15 +10,27 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Jing Yun on 10/12/2017.
+ * This is the adapter for my news feed the adapter will decided how to populate each list item in my list view
  */
 
 public class NewsAdapter extends ArrayAdapter<NewsItem> {
     public List<NewsItem> articleList;
     Context context;
+
 
     public NewsAdapter(Context context, List<NewsItem> newsItemList) {
         super(context,0, newsItemList);
@@ -34,6 +47,8 @@ public class NewsAdapter extends ArrayAdapter<NewsItem> {
         ViewHolder viewHolder = null;
         NewsItem newsItem = getItem(position);
         LayoutInflater inflater = LayoutInflater.from(getContext());
+
+
         if (convertView == null) {
 
             convertView = inflater.inflate(R.layout.news_item, parent, false);
@@ -48,6 +63,8 @@ public class NewsAdapter extends ArrayAdapter<NewsItem> {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+
+
         viewHolder.articleName.setText(newsItem.getNewsTitle());
         Picasso.with(context)
                 .load(newsItem.getImageURL())
@@ -55,6 +72,8 @@ public class NewsAdapter extends ArrayAdapter<NewsItem> {
 
         return convertView;
     }
+
+
 }
 
 

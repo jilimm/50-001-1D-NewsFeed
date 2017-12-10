@@ -6,13 +6,16 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -25,7 +28,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 
 /**
@@ -43,16 +49,16 @@ public class NewsFeedFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    //This is the URL i will use to request data from News API
+    private final String reqURL="https://newsapi.org/v2/everything?q=sustainable%20business%20practices&sortBy=popularity&apiKey=1e128baae3034bd899a7a791748e8e47";
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private ListView newsItemListView;
-    List<NewsItem> newsItemList;
     public static NewsAdapter newsItemadapter;
-    private static Parcelable state;
     private OnFragmentInteractionListener mListener;
-    private final String reqURL="https://newsapi.org/v2/everything?q=sustainable%20business%20practices&sortBy=popularity&apiKey=1e128baae3034bd899a7a791748e8e47";
 
 
 
@@ -92,19 +98,11 @@ public class NewsFeedFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_news_feed,container,false);
-        newsItemadapter = new NewsAdapter(getActivity(), newsItemList);
-        newsItemListView = (ListView) rootView.findViewById(R.id.newsList);
-        newsItemListView.setAdapter(newsItemadapter);
-        newsItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Uri webpage = Uri.parse(newsItemList.get(position).getImageURL());
-                Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
-            }
-        });
 
+        //FOR DEBUGGING Toast.makeText(getActivity(), "fragment", Toast.LENGTH_SHORT).show();
+        View rootView = inflater.inflate(R.layout.fragment_news_feed,container,false);
+        newsItemListView = (ListView) rootView.findViewById(R.id.newsList);
+        new NewsFeedFragment.AsyncHttpTask().execute();
 
         return rootView;
     }
@@ -149,19 +147,22 @@ public class NewsFeedFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
     public class AsyncHttpTask extends AsyncTask<Void, Void, Void> {
-        List<NewsItem> articleList = new ArrayList<NewsItem>();
+        List<NewsItem> articleList = new ArrayList<>();
 
 
         @Override
-        protected Void doInBackground(Void... arg0) {
+        protected Void doInBackground(Void... voids) {
             URL url;
             HttpURLConnection urlConnection = null;
 
             try{
+                //using the URL above (from NEWs API)
                 url = new URL(reqURL);
                 urlConnection = (HttpURLConnection)url.openConnection();
                 String response = streamtoString(urlConnection.getInputStream());
+                //I will get a list of NewsItem Objects
                 articleList = parseResult(response);
 
             } catch (Exception e){
@@ -169,17 +170,28 @@ public class NewsFeedFragment extends Fragment {
             }
             return null;
         }
-
-        @Override
         protected void onPostExecute(Void result) {
-            for (int i=0; i<articleList.size(); i++){
-                articleTitle.setText(articleList.get(i).getNewsTitle());
-                Picasso.with(NewsFeed.this)
-                        .load(articleList.get(i).getImageURL())
-                        .into(newsImg);
-            }
+           // Toast.makeText(getActivity(), "async task post execute", Toast.LENGTH_SHORT).show()
+
+            //Once I have finished getting the list of Newsitem objects
+            //I attach it to my adapter
+            newsItemadapter = new NewsAdapter(getActivity(),articleList);
+            newsItemListView.setAdapter(newsItemadapter);
+            //this on on Click Listener means when people click on one list item they will got to the news link 
+            newsItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                    Uri webpage = Uri.parse(articleList.get(position).getNewsLink());
+                    Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+                    startActivity(webIntent);
+                }
+            });
+
         }
     }
+
+
+
 
     private String streamtoString(InputStream stream) {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
@@ -220,5 +232,6 @@ public class NewsFeedFragment extends Fragment {
         }
         return newsItemList;
     }
+
 
 }
